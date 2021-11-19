@@ -9,5 +9,5 @@ channel = connection.channel()
 
 
 def publish():
-    channel.basic_publish(exchange='', routing_key='django_backend', body='hello')
+    channel.basic_publish(exchange='', routing_key='flask_backend', body='hello')
 
