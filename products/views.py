@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from products.models import Product, User
-from products.serializer import ProductSerializer, UserSerializer
+from products.serializer import ProductSerializer
 
 
 class ProductViewSet(viewsets.ViewSet):
@@ -46,6 +46,5 @@ class UserAPIView(APIView):
                          })
 
     def post(self, request):
-        serializer = UserSerializer(request.data)
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        User.objects.create()
+        return Response(status=status.HTTP_204_NO_CONTENT)
