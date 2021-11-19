@@ -19,6 +19,6 @@ channel.basic_consume(queue='django_backend', on_message_callback=callback)
 
 print('Started Consuming')
 
-channel.stop_consuming()
+channel.start_consuming()
 
 channel.close()
