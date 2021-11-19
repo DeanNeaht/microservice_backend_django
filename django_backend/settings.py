@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework'
+    'rest_framework',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -86,10 +87,15 @@ DATABASES = {
         'USER': env.str("DB_USER"),
         'PASSWORD': env.str("DB_PASS"),
         'HOST': env.str("DB_HOST"),
-        'PORT': 5433,
+        'PORT': 5432,
     }
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'mydatabase',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
