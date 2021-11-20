@@ -24,3 +24,10 @@ services:
       - .:/app
     depends_on:
       - postgres
+  queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'python consumer.py'
+    depends_on:
+      - postgres
